@@ -58,7 +58,7 @@ header {
 .flip {
     animation: 0.5s linear flipping;
 }
-@media (max-width: 1050px) {
+@media and (max-width: 1050px) {
     * {
         font-size: 25px;
     }
@@ -88,5 +88,12 @@ header {
     }
     100% {
         transform:  rotate(0deg);
+    }
+}
+
+
+@media and (max-width: 992px) {
+    * {
+        font-size: 20px;
     }
 }
