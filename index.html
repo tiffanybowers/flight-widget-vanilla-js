@@ -8,25 +8,27 @@
     <title>Flight Widget</title>
 </head>
 <body>
-    <div class="container">
-        <div class="departures">
-            <header>DEPARTURES</header>
-    
-            <table class="scrollable">
-                <thead>
-                    <tr>
-                        <th id="time">TIME</th>
-                        <th id="destination">DESTINATION</th>
-                        <th id="flight">FLIGHT</th>
-                        <th id="gate">GATE</th>
-                        <th id="remarks">REMARKS</th>
-                    </tr>
-                </thead>
-                <tbody id="table-body"></tbody>
-            </table>
+    <div class="wrapper">
+        <div class="container">
+            <div class="departures">
+                <header>DEPARTURES</header>
+        
+                <table class="scrollable">
+                    <thead>
+                        <tr>
+                            <th id="time">TIME</th>
+                            <th id="destination">DESTINATION</th>
+                            <th id="flight">FLIGHT</th>
+                            <th id="gate">GATE</th>
+                            <th id="remarks">REMARKS</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body"></tbody>
+                </table>
+            </div>
         </div>
+        <p class="scroll-indicator-text" style="text-align: right;color: #333;font-size: 16px;margin-right: 20px;">Scroll &gt;</p>
     </div>
-
     <script src="app.js"></script>
 </body>
 </html>
