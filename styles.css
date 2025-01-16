@@ -60,6 +60,7 @@ header {
 }
 
 .scroll-indicator-text { display: none; }
+
 @media and (max-width: 1050px) {
     * {
         font-size: 25px;
@@ -98,5 +99,7 @@ header {
     * {
         font-size: 20px;
     }
-    .scroll-indicator-text { display: block; }
+    .scroll-indicator-text { 
+        display: block; 
+    }
 }
