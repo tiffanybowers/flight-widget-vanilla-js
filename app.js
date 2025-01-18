@@ -65,8 +65,8 @@ function populateTable() {
             }
 
             tableRow.append(tableData);
-            tableBody.append(tableRow);
         }
+        tableBody.append(tableRow);
 
     }
 }
