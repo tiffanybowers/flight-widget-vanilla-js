@@ -47,8 +47,8 @@ function populateTable() {
     for(const flight of flights) {
         const tableRow = document.createElement('tr');
         // lets add a counter class to each row, e.g. row-1 row-2
+        var counterRow = 'row-' + counter;
         for(const flightDetail in flight) { 
-            var counterRow = 'row-' + counter;
             counter++;
             tableRow.classList.add(counterRow);
             const tableData = document.createElement('td');
