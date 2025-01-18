@@ -92,8 +92,12 @@ header {
         font-size: 20px;
     }
     .scroll-indicator-text { 
-        display: flex;
+        display: block;
+        position: absolute;
+        bottom: -30px;
+        right: 0px;
     }
+    
     .container { width: 100vw; } 
     .departures {
         display: flex;
