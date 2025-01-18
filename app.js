@@ -41,34 +41,54 @@ let flights = [
 const destinations = ["TOKYO", "FRANKFURT", "DUBAI", "LONDON", "OMAN", "BEIRUT"];
 const remarks = ["ON TIME", "DELAYED", "CANCELLED"];
 let hour = 15;
-var counter = 0;
+var counter = 0; // Initialize the counter
 
 function populateTable() {
     for(const flight of flights) {
         const tableRow = document.createElement('tr');
         // lets add a counter class to each row, e.g. row-1 row-2
         var counterRow = 'row-' + counter;
-        for(const flightDetail in flight) { 
-            counter++;
-            tableRow.classList.add(counterRow);
-            const tableData = document.createElement('td');
-            const word = Array.from(flight[flightDetail]);
 
-            for(const [index, letter] of word.entries()) {
-                const letterElement = document.createElement('div');
+        // Iterate through each detail in the 'flight' object
+        for (const flightDetail in flight) { 
+            // Check if the row already exists in the table
+            let tableRow = document.querySelector('.row-' + counter);
 
-                setTimeout(() => {
-                    letterElement.classList.add('flip');
-                    letterElement.textContent = letter;
-                    tableData.append(letterElement);
-                }, 100 * index);
+            if (!tableRow) {
+                // If the row does not exist, create it
+                tableRow = document.createElement('tr');
+        
+                // Dynamically create a class name for the row based on the counter value
+                var counterRow = 'row-' + counter;
+                tableRow.classList.add(counterRow); // Add the dynamic class to the row
+        
+                // Append the row to the table
+                const table = document.querySelector('table'); // Assuming there's a table element
+                table.append(tableRow);
             }
 
-            tableRow.append(tableData);
-        }
-        tableBody.append(tableRow);
+            // Clear the current row's content before updating it
+            tableRow.innerHTML = '';
+    
+            const tableData = document.createElement('td'); // Create a <td> element for the row's data
+            const word = Array.from(flight[flightDetail]); // Convert the current flight detail into an array of characters
+        
+            for (const [index, letter] of word.entries()) { // Loop through the characters in the array
+                const letterElement = document.createElement('div'); // Create a <div> element for the letter
+        
+                setTimeout(() => {
+                    letterElement.classList.add('flip'); // Add the 'flip' class for animation
+                    letterElement.textContent = letter; // Set the text content to the letter
+                    tableData.append(letterElement); // Append the letter <div> to the <td>
+                }, 100 * index); // Introduce a delay for the animation
+            }
 
+            tableRow.append(tableData); // Append the completed <td> to the current row
+
+            // Increment the counter for the next row
+            counter++;
     }
+    tableBody.append(tableRow); // Append the row to the table
 }
 populateTable();
 
