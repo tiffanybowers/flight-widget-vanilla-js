@@ -94,6 +94,14 @@ header {
     .scroll-indicator-text { 
         display: flex;
     }
+    .container { width: 100vw; } 
+    .departures {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        overflow: auto;
+        white-space: normal;
+    }
 }
 
 @keyframes flipping {
