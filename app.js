@@ -87,8 +87,9 @@ function populateTable() {
 
             // Increment the counter for the next row
             counter++;
+        }
+        tableBody.append(tableRow); // Append the row to the table
     }
-    tableBody.append(tableRow); // Append the row to the table
 }
 populateTable();
 
