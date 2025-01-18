@@ -41,12 +41,12 @@ let flights = [
 const destinations = ["TOKYO", "FRANKFURT", "DUBAI", "LONDON", "OMAN", "BEIRUT"];
 const remarks = ["ON TIME", "DELAYED", "CANCELLED"];
 let hour = 15;
+var counter = 0;
 
 function populateTable() {
     for(const flight of flights) {
         const tableRow = document.createElement('tr');
         // lets add a counter class to each row, e.g. row-1 row-2
-        var counter = 0;
         for(const flightDetail in flight) { 
             var counterRow = 'row-' + counter;
             counter++;
@@ -65,9 +65,9 @@ function populateTable() {
             }
 
             tableRow.append(tableData);
+            tableBody.append(tableRow);
         }
 
-        tableBody.append(tableRow);
     }
 }
 populateTable();
