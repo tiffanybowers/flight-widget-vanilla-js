@@ -6,6 +6,7 @@
     font-size: 35px;
 }
 
+.wrapper { position: relative; }
 body {
     display: flex;
     justify-content: center;
@@ -98,7 +99,8 @@ header {
         display: block;
         position: absolute;
         bottom: -30px;
-        right: 0px;
+        right: 20px;
+        font-size: 16px;
     }
     
 }
@@ -107,6 +109,7 @@ header {
     * {
         font-size: 20px;
     }
+    .scroll-indicator-text { right: 10px; }
 }
 
 @keyframes flipping {
