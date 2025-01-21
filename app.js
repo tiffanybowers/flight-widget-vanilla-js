@@ -41,57 +41,43 @@ let flights = [
 const destinations = ["TOKYO", "FRANKFURT", "DUBAI", "LONDON", "OMAN", "BEIRUT"];
 const remarks = ["ON TIME", "DELAYED", "CANCELLED"];
 let hour = 15;
-var counter = 0; // Initialize the counter
 
 function populateTable() {
-    for(const flight of flights) {
+    tableBody.innerHTML = ''; // Clear the table body before repopulating it
+
+    // Loop through the flights array
+    for (const flight of flights) {
+        // Create a new table row
         const tableRow = document.createElement('tr');
-        // lets add a counter class to each row, e.g. row-1 row-2
-        var counterRow = 'row-' + counter;
 
-        // Iterate through each detail in the 'flight' object
-        for (const flightDetail in flight) { 
-            // Check if the row already exists in the table
-            let tableRow = document.querySelector('.row-' + counter);
+        // Loop through the properties of the flight object
+        for (const flightDetail in flight) {
+            // Create a <td> for the current flight property
+            const tableData = document.createElement('td');
 
-            // if (!tableRow) {
-                // If the row does not exist, create it
-                // tableRow = document.createElement('tr');
-        
-                // Dynamically create a class name for the row based on the counter value
-                // var counterRow = 'row-' + counter;
-                tableRow.classList.add(counterRow); // Add the dynamic class to the row
-        
-                // Append the row to the table
-                // const table = document.querySelector('table'); // Assuming there's a table element
-                // table.append(tableRow);
-            // }
+            // Convert the flight detail value into an array of characters
+            const word = Array.from(flight[flightDetail]);
 
-            // Clear the current row's content before updating it
-            // tableRow.innerHTML = '';
-    
-            const tableData = document.createElement('td'); // Create a <td> element for the row's data
-            const word = Array.from(flight[flightDetail]); // Convert the current flight detail into an array of characters
-        
-            for (const [index, letter] of word.entries()) { // Loop through the characters in the array
-                const letterElement = document.createElement('div'); // Create a <div> element for the letter
-        
+            // Loop through each character (for flip animation)
+            for (const [index, letter] of word.entries()) {
+                const letterElement = document.createElement('div'); // Create a div for each character
+
                 setTimeout(() => {
                     letterElement.classList.add('flip'); // Add the 'flip' class for animation
-                    letterElement.textContent = letter; // Set the text content to the letter
-                    tableData.append(letterElement); // Append the letter <div> to the <td>
-                }, 100 * index); // Introduce a delay for the animation
+                    letterElement.textContent = letter; // Set the letter as the text content
+                    tableData.append(letterElement); // Append the letter div to the <td>
+                }, 100 * index); // Introduce a delay for the flip animation
             }
-
-            tableRow.append(tableData); // Append the completed <td> to the current row
-
-            // Increment the counter for the next row
-            counter++;
+            // Append the <td> to the current row
+            tableRow.appendChild(tableData);
         }
-        tableBody.append(tableRow); // Append the row to the table
+        // Append the completed row to the table body
+        tableBody.appendChild(tableRow);
     }
 }
+// Call/Invoke the function to populate the table
 populateTable();
+
 
 function generateRandomLetter() {
     const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
