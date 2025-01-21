@@ -44,11 +44,14 @@ let hour = 15;
 
 function populateTable() {
     tableBody.innerHTML = ''; // Clear the table body before repopulating it
+    let counter = 0; // Counter to track row numbers
 
     // Loop through the flights array
     for (const flight of flights) {
         // Create a new table row
         const tableRow = document.createElement('tr');
+        // Add a unique class to the row (e.g., row-0, row-1, etc.)
+        tableRow.classList.add(`row-${counter}`);
 
         // Loop through the properties of the flight object
         for (const flightDetail in flight) {
@@ -70,6 +73,8 @@ function populateTable() {
             }
             // Append the <td> to the current row
             tableRow.appendChild(tableData);
+            // Increment the counter for the next row
+            counter++;
         }
         // Append the completed row to the table body
         tableBody.appendChild(tableRow);
