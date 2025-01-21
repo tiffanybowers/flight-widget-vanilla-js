@@ -54,21 +54,21 @@ function populateTable() {
             // Check if the row already exists in the table
             let tableRow = document.querySelector('.row-' + counter);
 
-            if (!tableRow) {
+            // if (!tableRow) {
                 // If the row does not exist, create it
-                tableRow = document.createElement('tr');
+                // tableRow = document.createElement('tr');
         
                 // Dynamically create a class name for the row based on the counter value
-                var counterRow = 'row-' + counter;
+                // var counterRow = 'row-' + counter;
                 tableRow.classList.add(counterRow); // Add the dynamic class to the row
         
                 // Append the row to the table
-                const table = document.querySelector('table'); // Assuming there's a table element
-                table.append(tableRow);
-            }
+                // const table = document.querySelector('table'); // Assuming there's a table element
+                // table.append(tableRow);
+            // }
 
             // Clear the current row's content before updating it
-            tableRow.innerHTML = '';
+            // tableRow.innerHTML = '';
     
             const tableData = document.createElement('td'); // Create a <td> element for the row's data
             const word = Array.from(flight[flightDetail]); // Convert the current flight detail into an array of characters
