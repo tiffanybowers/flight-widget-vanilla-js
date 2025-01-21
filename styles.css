@@ -67,7 +67,14 @@ header {
     animation: 0.5s linear flipping;
 }
 
-.scroll-indicator-text { display: none; }
+.scroll-indicator-text { 
+    display: none;
+    position: absolute;
+    bottom: -30px;
+    right: 20px;
+    font-size: 15px;
+    color: #333;
+}
 
 @media screen and (max-width: 1050px) {
     * {
@@ -95,13 +102,7 @@ header {
     }
     .scrollable { width: 100%; }
 
-    .scroll-indicator-text { 
-        display: block;
-        position: absolute;
-        bottom: -30px;
-        right: 20px;
-        font-size: 16px;
-    }
+    .scroll-indicator-text { display: block; }
     
 }
 
