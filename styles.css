@@ -16,7 +16,8 @@ body {
     margin: 0;
 }
 
-header {
+header,
+.departures table {
     padding: 10px;
 }
 
