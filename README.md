@@ -11,7 +11,7 @@ A simple flight information widget that displays and periodically updates flight
 
 ## Project Structure
 ```
-flight-widget/
+flight-widget-vanilla-js/
 ├── index.html
 ├── style.css
 └── app.js
